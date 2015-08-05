@@ -1,0 +1,32 @@
+//
+//  Prefix.pch
+//  bbcfeedreader
+//
+//  Created by Zabolotnyy S. on 05.08.15.
+//  Copyright (c) 2015 Zabolotnyy S. All rights reserved.
+//
+
+#import <Availability.h>
+
+#if defined(DEBUG) || defined(QA)
+#   define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#   define NSLog(...)
+#endif
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#define weakify(object) __weak typeof(object) w ## object = object
+#define strongify(object) typeof(object) s ## object = object;
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "NSManagedObjectContext+Save.h"
+
+#endif
+
