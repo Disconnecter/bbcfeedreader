@@ -10,6 +10,12 @@
 
 @interface NewsManager : NSObject
 
-+ (void)getNewNews;
+
+/**
+ *  Get news updates
+ *
+ *  @param completion can be called not in main tread
+ */
++ (void)getNewNewsCompletion:(void (^)(void))completion;
 
 @end

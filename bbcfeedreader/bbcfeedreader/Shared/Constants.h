@@ -8,3 +8,9 @@
 
 extern NSString * const kLastBuildDateKey;
 extern NSString * const kDateFormat;
+
+extern NSString * const kLocalizedTableNewsCtrl;
+extern NSString * const kLocalizedTableDetailsCtrl;
+extern NSString * const kLocalizedTableWebCtrl;
+
+extern NSString * const kSegueNameShowWeb;

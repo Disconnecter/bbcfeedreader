@@ -9,6 +9,8 @@
 #import "NewsItem.h"
 #import "Media.h"
 #import "NSString+helper.h"
+#import "NetworkCommunicationManager.h"
+#import "CoreDataStack.h"
 
 @implementation NewsItem
 
@@ -54,6 +56,42 @@
     }
     
     return nil;
+}
+
+- (void)imageForUrl:(NSString*)url completion:(void (^)(UIImage* image))completion
+{
+    @synchronized(self)
+    {
+        NSString* imagePath = [CoreDataStack shared].dataFolder;
+        imagePath = [imagePath stringByAppendingString:[url md5String]];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:imagePath])
+        {
+            if (completion)
+            {
+                completion([UIImage imageWithContentsOfFile:imagePath]);
+            }
+            return;
+        }
+        
+        [[NetworkCommunicationManager sharedInstance] qd_getDataFromURL:url withCompletion:^(NSData *data, NSError *error)
+         {
+             if (error)
+             {
+                 if (completion)
+                 {
+                     completion (nil);
+                 }
+                 return;
+             }
+             
+             [data writeToFile:imagePath atomically:YES];
+             
+             if (completion)
+             {
+                 completion([UIImage imageWithData:data]);
+             }
+         }];
+    }
 }
 
 @end

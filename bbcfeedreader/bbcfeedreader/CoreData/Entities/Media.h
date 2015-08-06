@@ -14,7 +14,6 @@
 @interface Media : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * height;
-@property (nonatomic, retain) NSString * localPath;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSNumber * width;
 @property (nonatomic, retain) NewsItem *newsitem;

@@ -8,14 +8,16 @@
 
 #import <Availability.h>
 
+#define LOCALIZE(STRING, TABLE) [[NSBundle mainBundle] localizedStringForKey:STRING value:@"UNLOCALIZED" table:TABLE]
+
 #if defined(DEBUG) || defined(QA)
 #   define NSLog(...) NSLog(__VA_ARGS__)
 #else
 #   define NSLog(...)
 #endif
 
-#ifndef __IPHONE_4_0
-#warning "This project uses features only available in iOS SDK 4.0 and later."
+#ifndef __IPHONE_8_2
+#warning "This project uses features only available in iOS SDK 8.2 and later."
 #endif
 
 #define weakify(object) __weak typeof(object) w ## object = object

@@ -2,7 +2,6 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Media" representedClassName="Media" syncable="YES">
         <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="localPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="newsitem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewsItem" inverseName="medias" inverseEntity="NewsItem" syncable="YES"/>
@@ -16,7 +15,7 @@
         <relationship name="medias" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Media" inverseName="newsitem" inverseEntity="Media" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Media" positionX="-632" positionY="-588" width="128" height="120"/>
+        <element name="Media" positionX="-632" positionY="-588" width="128" height="105"/>
         <element name="NewsItem" positionX="-828" positionY="-603" width="128" height="135"/>
     </elements>
 </model>

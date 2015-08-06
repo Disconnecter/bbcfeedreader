@@ -106,4 +106,49 @@
     
     return persistentStoreCoordinator;
 }
+
+- (NSString *)dataFolder
+{
+    static NSString *dataFolder      = nil;
+    static dispatch_once_t onceToken = 0;
+    
+    dispatch_once(&onceToken, ^{
+        
+        NSArray *paths    = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+        NSString *baseDir = nil;
+        
+        if (paths.count)
+        {
+            baseDir = paths.firstObject;
+        }
+        else
+        {
+            NSLog(@"!!!WARNING!!! CAN'T FIND APPLICATION SUPPORT FOLDER. SWITCHING TO DOC FOLDER");
+            
+            paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            
+            if (!paths.count)
+            {
+                NSLog(@"!!!WARNING!!! CAN'T FIND DOC FOLDER");
+                return;
+            }
+            
+            baseDir = paths.firstObject;
+        }
+        
+        dataFolder = [baseDir stringByAppendingPathComponent:NSBundle.mainBundle.bundleIdentifier];
+        
+        if(![NSFileManager.defaultManager fileExistsAtPath:dataFolder])
+        {
+            NSError *error;
+            
+            if(![NSFileManager.defaultManager createDirectoryAtPath:dataFolder withIntermediateDirectories:YES attributes:nil error:&error])
+            {
+                NSLog(@"!!!WARNING!!! FAILED TO CREATE DATA FOLDER: %@\nERROR: %@", dataFolder, error);
+            }
+        }
+    });
+    
+    return dataFolder;
+}
 @end

@@ -11,5 +11,6 @@
 @interface NSString (helper)
 
 - (NSDate*)dateWithFormater:(NSString*)format;
+- (NSString *)md5String;
 
 @end

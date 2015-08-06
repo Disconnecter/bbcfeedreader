@@ -10,6 +10,14 @@
 		2A6341B91B736F050002A7DF /* SafeFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341B81B736F050002A7DF /* SafeFetchedResultsController.m */; };
 		2A6341BC1B736F480002A7DF /* SafeFRCDelegateImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341BB1B736F480002A7DF /* SafeFRCDelegateImplementation.m */; };
 		2A6341BF1B736F640002A7DF /* ReloadFRCDelegateImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341BE1B736F640002A7DF /* ReloadFRCDelegateImplementation.m */; };
+		2A6341C51B73749C0002A7DF /* NewsCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341C41B73749C0002A7DF /* NewsCtrl.m */; };
+		2A6341C81B7374C90002A7DF /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341C71B7374C90002A7DF /* NewsCell.m */; };
+		2A6341CB1B7374E10002A7DF /* DetailsCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341CA1B7374E10002A7DF /* DetailsCtrl.m */; };
+		2A6341CE1B7374F30002A7DF /* WebCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341CD1B7374F30002A7DF /* WebCtrl.m */; };
+		2A6341D11B7378C00002A7DF /* NSDate+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341D01B7378C00002A7DF /* NSDate+helper.m */; };
+		2A6341D41B738A520002A7DF /* NewsCtrl.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A6341D31B738A520002A7DF /* NewsCtrl.strings */; };
+		2A6341D61B738A620002A7DF /* DetailsCtrl.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A6341D51B738A620002A7DF /* DetailsCtrl.strings */; };
+		2A6341DA1B73B3B70002A7DF /* WebCtrl.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2A6341D91B73B3B70002A7DF /* WebCtrl.strings */; };
 		2A976C631B70E314006FAF8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C621B70E314006FAF8E /* main.m */; };
 		2A976C661B70E314006FAF8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C651B70E314006FAF8E /* AppDelegate.m */; };
 		2A976C691B70E314006FAF8E /* bbcfeedreader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C671B70E314006FAF8E /* bbcfeedreader.xcdatamodeld */; };
@@ -45,6 +53,19 @@
 		2A6341BB1B736F480002A7DF /* SafeFRCDelegateImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeFRCDelegateImplementation.m; sourceTree = "<group>"; };
 		2A6341BD1B736F640002A7DF /* ReloadFRCDelegateImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReloadFRCDelegateImplementation.h; sourceTree = "<group>"; };
 		2A6341BE1B736F640002A7DF /* ReloadFRCDelegateImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReloadFRCDelegateImplementation.m; sourceTree = "<group>"; };
+		2A6341C31B73749C0002A7DF /* NewsCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCtrl.h; sourceTree = "<group>"; };
+		2A6341C41B73749C0002A7DF /* NewsCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCtrl.m; sourceTree = "<group>"; };
+		2A6341C61B7374C90002A7DF /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		2A6341C71B7374C90002A7DF /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		2A6341C91B7374E10002A7DF /* DetailsCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsCtrl.h; sourceTree = "<group>"; };
+		2A6341CA1B7374E10002A7DF /* DetailsCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsCtrl.m; sourceTree = "<group>"; };
+		2A6341CC1B7374F30002A7DF /* WebCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCtrl.h; sourceTree = "<group>"; };
+		2A6341CD1B7374F30002A7DF /* WebCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCtrl.m; sourceTree = "<group>"; };
+		2A6341CF1B7378C00002A7DF /* NSDate+helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+helper.h"; sourceTree = "<group>"; };
+		2A6341D01B7378C00002A7DF /* NSDate+helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+helper.m"; sourceTree = "<group>"; };
+		2A6341D31B738A520002A7DF /* NewsCtrl.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = NewsCtrl.strings; sourceTree = "<group>"; };
+		2A6341D51B738A620002A7DF /* DetailsCtrl.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = DetailsCtrl.strings; sourceTree = "<group>"; };
+		2A6341D91B73B3B70002A7DF /* WebCtrl.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = WebCtrl.strings; sourceTree = "<group>"; };
 		2A976C5D1B70E314006FAF8E /* bbcfeedreader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbcfeedreader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A976C611B70E314006FAF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A976C621B70E314006FAF8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -109,6 +130,45 @@
 			path = FRC;
 			sourceTree = "<group>";
 		};
+		2A6341C01B73740D0002A7DF /* NewsController */ = {
+			isa = PBXGroup;
+			children = (
+				2A6341C31B73749C0002A7DF /* NewsCtrl.h */,
+				2A6341C41B73749C0002A7DF /* NewsCtrl.m */,
+				2A6341C61B7374C90002A7DF /* NewsCell.h */,
+				2A6341C71B7374C90002A7DF /* NewsCell.m */,
+			);
+			path = NewsController;
+			sourceTree = "<group>";
+		};
+		2A6341C11B7374320002A7DF /* DetailsController */ = {
+			isa = PBXGroup;
+			children = (
+				2A6341C91B7374E10002A7DF /* DetailsCtrl.h */,
+				2A6341CA1B7374E10002A7DF /* DetailsCtrl.m */,
+			);
+			path = DetailsController;
+			sourceTree = "<group>";
+		};
+		2A6341C21B7374500002A7DF /* WebController */ = {
+			isa = PBXGroup;
+			children = (
+				2A6341CC1B7374F30002A7DF /* WebCtrl.h */,
+				2A6341CD1B7374F30002A7DF /* WebCtrl.m */,
+			);
+			path = WebController;
+			sourceTree = "<group>";
+		};
+		2A6341D21B738A300002A7DF /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				2A6341D31B738A520002A7DF /* NewsCtrl.strings */,
+				2A6341D51B738A620002A7DF /* DetailsCtrl.strings */,
+				2A6341D91B73B3B70002A7DF /* WebCtrl.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		2A976C541B70E314006FAF8E = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +207,7 @@
 		2A976C601B70E314006FAF8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2A6341D21B738A300002A7DF /* Localization */,
 				2A976C611B70E314006FAF8E /* Info.plist */,
 				2A976C621B70E314006FAF8E /* main.m */,
 				2A976C9E1B7209DB006FAF8E /* Prefix.pch */,
@@ -188,6 +249,9 @@
 		2A976C8A1B71EA45006FAF8E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2A6341C01B73740D0002A7DF /* NewsController */,
+				2A6341C11B7374320002A7DF /* DetailsController */,
+				2A6341C21B7374500002A7DF /* WebController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,6 +295,8 @@
 			children = (
 				2AD2B3201B725878001B59B3 /* NSString+helper.h */,
 				2AD2B3211B725878001B59B3 /* NSString+helper.m */,
+				2A6341CF1B7378C00002A7DF /* NSDate+helper.h */,
+				2A6341D01B7378C00002A7DF /* NSDate+helper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -315,8 +381,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6341DA1B73B3B70002A7DF /* WebCtrl.strings in Resources */,
 				2A976C6F1B70E314006FAF8E /* Main.storyboard in Resources */,
+				2A6341D61B738A620002A7DF /* DetailsCtrl.strings in Resources */,
 				2A976C741B70E314006FAF8E /* LaunchScreen.xib in Resources */,
+				2A6341D41B738A520002A7DF /* NewsCtrl.strings in Resources */,
 				2A976C711B70E314006FAF8E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,19 +406,24 @@
 			files = (
 				2AD2B31E1B72529F001B59B3 /* Constants.m in Sources */,
 				2A976C691B70E314006FAF8E /* bbcfeedreader.xcdatamodeld in Sources */,
+				2A6341CE1B7374F30002A7DF /* WebCtrl.m in Sources */,
 				2A976CA51B7216F1006FAF8E /* XMLConverter.m in Sources */,
 				2AD2B3221B725878001B59B3 /* NSString+helper.m in Sources */,
 				2AD2B3171B72411C001B59B3 /* NewsManager.m in Sources */,
+				2A6341C81B7374C90002A7DF /* NewsCell.m in Sources */,
 				2A6341B91B736F050002A7DF /* SafeFetchedResultsController.m in Sources */,
 				2A976C991B720060006FAF8E /* Media.m in Sources */,
+				2A6341C51B73749C0002A7DF /* NewsCtrl.m in Sources */,
 				2A976C9D1B72015C006FAF8E /* NSManagedObjectContext+Save.m in Sources */,
 				2A976CA21B721325006FAF8E /* NetworkCommunicationManager.m in Sources */,
 				2A976C661B70E314006FAF8E /* AppDelegate.m in Sources */,
 				2A6341BF1B736F640002A7DF /* ReloadFRCDelegateImplementation.m in Sources */,
 				2A976C9A1B720060006FAF8E /* NewsItem.m in Sources */,
 				2A6341BC1B736F480002A7DF /* SafeFRCDelegateImplementation.m in Sources */,
+				2A6341D11B7378C00002A7DF /* NSDate+helper.m in Sources */,
 				2A976C631B70E314006FAF8E /* main.m in Sources */,
 				2A976C8D1B71FB6C006FAF8E /* CoreDataStack.m in Sources */,
+				2A6341CB1B7374E10002A7DF /* DetailsCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

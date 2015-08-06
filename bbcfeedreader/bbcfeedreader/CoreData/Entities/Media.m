@@ -12,7 +12,6 @@
 @implementation Media
 
 @dynamic height;
-@dynamic localPath;
 @dynamic url;
 @dynamic width;
 @dynamic newsitem;

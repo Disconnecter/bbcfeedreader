@@ -16,4 +16,6 @@
 
 + (instancetype)shared;
 
+- (NSString *)dataFolder;
+
 @end

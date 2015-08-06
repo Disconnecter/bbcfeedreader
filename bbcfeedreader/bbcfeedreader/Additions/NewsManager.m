@@ -13,7 +13,7 @@
 
 @implementation NewsManager
 
-+ (void)getNewNews
++ (void)getNewNewsCompletion:(void (^)(void))completion
 {
     NSString* url = @"http://feeds.bbci.co.uk/news/rss.xml";
     
@@ -22,6 +22,10 @@
      {
          if (error)
          {
+             if (completion)
+             {
+                 completion();
+             }
              return;
          }
          
@@ -35,18 +39,22 @@
          
          if ([lastSavedDate isEqualToDate:date])
          {
+             if (completion)
+             {
+                 completion();
+             }
              return;
          }
          
          if ([[date laterDate:lastSavedDate] isEqualToDate:date])
          {
              [[NSUserDefaults standardUserDefaults] setObject:date forKey:kLastBuildDateKey];
-             [NewsManager parseWithArray:data[@"rss"][@"channel"][@"item"]];
+             [NewsManager parseWithArray:data[@"rss"][@"channel"][@"item"] completion:completion];
          }
      }];
 }
 
-+ (void)parseWithArray:(NSArray*)arr
++ (void)parseWithArray:(NSArray*)arr completion:(void (^)(void))completion
 {
     [NSManagedObjectContext qd_performForSave:^(NSManagedObjectContext *context)
     {
@@ -61,6 +69,11 @@
             }
             
             [context saveChanges];
+            
+            if (completion)
+            {
+                completion();
+            }
         }
     }];
 }
