@@ -8,6 +8,35 @@
 
 #import <CoreData/CoreData.h>
 
-@interface SafeFetchedResultsController : NSFetchedResultsController
+@protocol SafeFetchedResultsControllerDelegate;
+
+@interface SafeFetchedResultsController : NSFetchedResultsController <NSFetchedResultsControllerDelegate>
+{
+    __weak id <SafeFetchedResultsControllerDelegate> safeDelegate;
+    
+    NSMutableArray *insertedSections;
+    NSMutableArray *deletedSections;
+    
+    NSMutableArray *insertedObjects;
+    NSMutableArray *deletedObjects;
+    NSMutableArray *updatedObjects;
+    NSMutableArray *movedObjects;
+}
+
+@property (weak, nonatomic) id <SafeFetchedResultsControllerDelegate> safeDelegate;
+
+@end
+
+@protocol SafeFetchedResultsControllerDelegate <NSFetchedResultsControllerDelegate, NSObject>
+
+@required
+@property (copy, nonatomic) void(^contentChanged)(id<SafeFetchedResultsControllerDelegate> delegate);
+
+@optional
+@property (weak, nonatomic) UITableView *tableView;
+
+@optional
+
+- (void)controllerDidMakeUnsafeChanges:(NSFetchedResultsController *)controller;
 
 @end

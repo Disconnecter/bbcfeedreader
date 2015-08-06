@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SafeFetchedResultsController.h"
 
-@interface ReloadFRCDelegateImplementation : NSObject
+@interface ReloadFRCDelegateImplementation : NSObject <SafeFetchedResultsControllerDelegate>
+
+@property (copy, nonatomic) void(^contentChanged)(id<SafeFetchedResultsControllerDelegate> delegate);
+@property (weak, nonatomic) UITableView *tableView;
 
 @end
