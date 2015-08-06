@@ -147,7 +147,11 @@ Cg
                                             <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="[pubDate]">
+                                    <fragment>
+                                        <string key="content">[pubDate]
+
+
+</string>
                                         <attributes>
                                             <color key="NSBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="NSColor" name="gridColor" catalog="System" colorSpace="catalog"/>

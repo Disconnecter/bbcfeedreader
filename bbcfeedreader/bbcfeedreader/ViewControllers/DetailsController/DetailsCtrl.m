@@ -10,6 +10,7 @@
 #import "NewsItem.h"
 #import "WebCtrl.h"
 #import "NSDate+helper.h"
+#import "Media.h"
 
 @interface DetailsCtrl ()
 
@@ -61,6 +62,22 @@
     [self setField:@"[fulltext]" inString:string withValue:self.newsItem.newsdescription];
     [self setField:@"[pubDate]" inString:string withValue:[self.newsItem.pubDate stringWithFormat:kDateFormat]];
     [self.fullText setAttributedText:attributedString];
+    
+    if (self.newsItem.medias.allObjects)
+    {
+        __weak typeof(self) wSelf = self;
+        Media* media = self.newsItem.medias.allObjects.lastObject;
+        [self.newsItem imageForUrl:media.url completion:^(UIImage *image)
+         {
+             NSTextAttachment *img = [NSTextAttachment new];
+             img.image = image;
+             NSAttributedString *attach = [NSAttributedString attributedStringWithAttachment:img];
+             NSMutableAttributedString* attributedString = [NSMutableAttributedString new];
+             [attributedString setAttributedString:[wSelf.fullText attributedText]];
+             [attributedString appendAttributedString:attach];
+             [wSelf.fullText setAttributedText:attributedString];
+         }];
+    }
 }
 
 - (void)setField:(NSString*)field inString:(NSMutableString*)string withValue:(NSString*)value
