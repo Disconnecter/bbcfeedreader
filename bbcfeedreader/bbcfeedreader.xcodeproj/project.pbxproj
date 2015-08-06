@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A6341B91B736F050002A7DF /* SafeFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341B81B736F050002A7DF /* SafeFetchedResultsController.m */; };
+		2A6341BC1B736F480002A7DF /* SafeFRCDelegateImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341BB1B736F480002A7DF /* SafeFRCDelegateImplementation.m */; };
+		2A6341BF1B736F640002A7DF /* ReloadFRCDelegateImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6341BE1B736F640002A7DF /* ReloadFRCDelegateImplementation.m */; };
 		2A976C631B70E314006FAF8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C621B70E314006FAF8E /* main.m */; };
 		2A976C661B70E314006FAF8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C651B70E314006FAF8E /* AppDelegate.m */; };
 		2A976C691B70E314006FAF8E /* bbcfeedreader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C671B70E314006FAF8E /* bbcfeedreader.xcdatamodeld */; };
@@ -18,6 +21,11 @@
 		2A976C991B720060006FAF8E /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C961B720060006FAF8E /* Media.m */; };
 		2A976C9A1B720060006FAF8E /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C981B720060006FAF8E /* NewsItem.m */; };
 		2A976C9D1B72015C006FAF8E /* NSManagedObjectContext+Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C9C1B72015C006FAF8E /* NSManagedObjectContext+Save.m */; };
+		2A976CA21B721325006FAF8E /* NetworkCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976CA11B721325006FAF8E /* NetworkCommunicationManager.m */; };
+		2A976CA51B7216F1006FAF8E /* XMLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976CA41B7216F1006FAF8E /* XMLConverter.m */; };
+		2AD2B3171B72411C001B59B3 /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B3161B72411C001B59B3 /* NewsManager.m */; };
+		2AD2B31E1B72529F001B59B3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B31D1B72529F001B59B3 /* Constants.m */; };
+		2AD2B3221B725878001B59B3 /* NSString+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B3211B725878001B59B3 /* NSString+helper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A6341B71B736F050002A7DF /* SafeFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeFetchedResultsController.h; sourceTree = "<group>"; };
+		2A6341B81B736F050002A7DF /* SafeFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeFetchedResultsController.m; sourceTree = "<group>"; };
+		2A6341BA1B736F480002A7DF /* SafeFRCDelegateImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeFRCDelegateImplementation.h; sourceTree = "<group>"; };
+		2A6341BB1B736F480002A7DF /* SafeFRCDelegateImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeFRCDelegateImplementation.m; sourceTree = "<group>"; };
+		2A6341BD1B736F640002A7DF /* ReloadFRCDelegateImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReloadFRCDelegateImplementation.h; sourceTree = "<group>"; };
+		2A6341BE1B736F640002A7DF /* ReloadFRCDelegateImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReloadFRCDelegateImplementation.m; sourceTree = "<group>"; };
 		2A976C5D1B70E314006FAF8E /* bbcfeedreader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbcfeedreader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A976C611B70E314006FAF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A976C621B70E314006FAF8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +66,16 @@
 		2A976C9B1B72015C006FAF8E /* NSManagedObjectContext+Save.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Save.h"; sourceTree = "<group>"; };
 		2A976C9C1B72015C006FAF8E /* NSManagedObjectContext+Save.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Save.m"; sourceTree = "<group>"; };
 		2A976C9E1B7209DB006FAF8E /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		2A976CA01B721325006FAF8E /* NetworkCommunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkCommunicationManager.h; sourceTree = "<group>"; };
+		2A976CA11B721325006FAF8E /* NetworkCommunicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkCommunicationManager.m; sourceTree = "<group>"; };
+		2A976CA31B7216F1006FAF8E /* XMLConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLConverter.h; sourceTree = "<group>"; };
+		2A976CA41B7216F1006FAF8E /* XMLConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLConverter.m; sourceTree = "<group>"; };
+		2AD2B3151B72411C001B59B3 /* NewsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsManager.h; sourceTree = "<group>"; };
+		2AD2B3161B72411C001B59B3 /* NewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
+		2AD2B31C1B72529F001B59B3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2AD2B31D1B72529F001B59B3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		2AD2B3201B725878001B59B3 /* NSString+helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+helper.h"; sourceTree = "<group>"; };
+		2AD2B3211B725878001B59B3 /* NSString+helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+helper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A6341B61B736E520002A7DF /* FRC */ = {
+			isa = PBXGroup;
+			children = (
+				2A6341B71B736F050002A7DF /* SafeFetchedResultsController.h */,
+				2A6341B81B736F050002A7DF /* SafeFetchedResultsController.m */,
+				2A6341BA1B736F480002A7DF /* SafeFRCDelegateImplementation.h */,
+				2A6341BB1B736F480002A7DF /* SafeFRCDelegateImplementation.m */,
+				2A6341BD1B736F640002A7DF /* ReloadFRCDelegateImplementation.h */,
+				2A6341BE1B736F640002A7DF /* ReloadFRCDelegateImplementation.m */,
+			);
+			path = FRC;
+			sourceTree = "<group>";
+		};
 		2A976C541B70E314006FAF8E = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +130,8 @@
 		2A976C5F1B70E314006FAF8E /* bbcfeedreader */ = {
 			isa = PBXGroup;
 			children = (
+				2AD2B31B1B72526B001B59B3 /* Shared */,
+				2A976C9F1B7210FF006FAF8E /* Additions */,
 				2A976C891B71EA34006FAF8E /* CoreData */,
 				2A976C8A1B71EA45006FAF8E /* ViewControllers */,
 				2A976C641B70E314006FAF8E /* AppDelegate.h */,
@@ -136,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2A976C671B70E314006FAF8E /* bbcfeedreader.xcdatamodeld */,
+				2A6341B61B736E520002A7DF /* FRC */,
 				2A976C941B72003A006FAF8E /* Entities */,
 				2A976C8B1B71FB6C006FAF8E /* CoreDataStack.h */,
 				2A976C8C1B71FB6C006FAF8E /* CoreDataStack.m */,
@@ -161,6 +201,38 @@
 				2A976C981B720060006FAF8E /* NewsItem.m */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		2A976C9F1B7210FF006FAF8E /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2B31F1B72584D001B59B3 /* Helpers */,
+				2A976CA01B721325006FAF8E /* NetworkCommunicationManager.h */,
+				2A976CA11B721325006FAF8E /* NetworkCommunicationManager.m */,
+				2A976CA31B7216F1006FAF8E /* XMLConverter.h */,
+				2A976CA41B7216F1006FAF8E /* XMLConverter.m */,
+				2AD2B3151B72411C001B59B3 /* NewsManager.h */,
+				2AD2B3161B72411C001B59B3 /* NewsManager.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		2AD2B31B1B72526B001B59B3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2B31C1B72529F001B59B3 /* Constants.h */,
+				2AD2B31D1B72529F001B59B3 /* Constants.m */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		2AD2B31F1B72584D001B59B3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2AD2B3201B725878001B59B3 /* NSString+helper.h */,
+				2AD2B3211B725878001B59B3 /* NSString+helper.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,11 +335,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD2B31E1B72529F001B59B3 /* Constants.m in Sources */,
 				2A976C691B70E314006FAF8E /* bbcfeedreader.xcdatamodeld in Sources */,
+				2A976CA51B7216F1006FAF8E /* XMLConverter.m in Sources */,
+				2AD2B3221B725878001B59B3 /* NSString+helper.m in Sources */,
+				2AD2B3171B72411C001B59B3 /* NewsManager.m in Sources */,
+				2A6341B91B736F050002A7DF /* SafeFetchedResultsController.m in Sources */,
 				2A976C991B720060006FAF8E /* Media.m in Sources */,
 				2A976C9D1B72015C006FAF8E /* NSManagedObjectContext+Save.m in Sources */,
+				2A976CA21B721325006FAF8E /* NetworkCommunicationManager.m in Sources */,
 				2A976C661B70E314006FAF8E /* AppDelegate.m in Sources */,
+				2A6341BF1B736F640002A7DF /* ReloadFRCDelegateImplementation.m in Sources */,
 				2A976C9A1B720060006FAF8E /* NewsItem.m in Sources */,
+				2A6341BC1B736F480002A7DF /* SafeFRCDelegateImplementation.m in Sources */,
 				2A976C631B70E314006FAF8E /* main.m in Sources */,
 				2A976C8D1B71FB6C006FAF8E /* CoreDataStack.m in Sources */,
 			);
@@ -399,6 +479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = bbcfeedreader/Prefix.pch;
 				INFOPLIST_FILE = bbcfeedreader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -410,6 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = bbcfeedreader/Prefix.pch;
 				INFOPLIST_FILE = bbcfeedreader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -468,6 +550,7 @@
 				2A976C851B70E314006FAF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2A976C861B70E314006FAF8E /* Build configuration list for PBXNativeTarget "bbcfeedreaderTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +559,7 @@
 				2A976C881B70E314006FAF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
