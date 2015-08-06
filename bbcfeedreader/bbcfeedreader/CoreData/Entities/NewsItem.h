@@ -19,6 +19,10 @@
 @property (nonatomic, retain) NSDate * pubDate;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSSet *medias;
+
++ (instancetype)newsItemWith:(NSDictionary *)dict inContext:(NSManagedObjectContext*)context;
++ (instancetype)newsItemForDate:(NSDate *)date inContext:(NSManagedObjectContext*)context;
+
 @end
 
 @interface NewsItem (CoreDataGeneratedAccessors)

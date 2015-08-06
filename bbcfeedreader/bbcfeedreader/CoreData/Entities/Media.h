@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NSManagedObject;
+@class NewsItem;
 
 @interface Media : NSManagedObject
 
@@ -17,6 +17,8 @@
 @property (nonatomic, retain) NSString * localPath;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSNumber * width;
-@property (nonatomic, retain) NSManagedObject *newsitem;
+@property (nonatomic, retain) NewsItem *newsitem;
+
++(instancetype)newMediaWithDict:(NSDictionary*)dict forNewsItem:(NewsItem*)news inContext:(NSManagedObjectContext*)context;
 
 @end

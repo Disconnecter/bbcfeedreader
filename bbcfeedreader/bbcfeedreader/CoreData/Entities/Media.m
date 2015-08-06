@@ -7,6 +7,7 @@
 //
 
 #import "Media.h"
+#import "NewsItem.h"
 
 @implementation Media
 
@@ -15,5 +16,17 @@
 @dynamic url;
 @dynamic width;
 @dynamic newsitem;
+
++(instancetype)newMediaWithDict:(NSDictionary*)dict forNewsItem:(NewsItem*)news inContext:(NSManagedObjectContext*)context
+{
+    Media* media = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(self) inManagedObjectContext:context];
+    
+    media.height = @([dict[@"height"] integerValue]);
+    media.width = @([dict[@"width"] integerValue]);
+    media.url = dict[@"url"];
+    media.newsitem = news;
+    
+    return media;
+}
 
 @end

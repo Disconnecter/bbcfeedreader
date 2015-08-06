@@ -20,7 +20,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="D7t-qb-6S8" kind="show" id="qEv-8P-jPz"/>
+                                    <segue destination="D7t-qb-6S8" kind="show" identifier="fullDescription" id="qEv-8P-jPz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,7 +64,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="9C1-mA-6dw" kind="show" id="Wot-xE-zhe"/>
+                        <segue destination="9C1-mA-6dw" kind="show" identifier="toWebView" id="Wot-xE-zhe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTT-o8-j28" userLabel="First Responder" sceneMemberID="firstResponder"/>
