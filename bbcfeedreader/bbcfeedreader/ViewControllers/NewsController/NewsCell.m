@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLbl;
 @property (weak, nonatomic) IBOutlet UILabel *pubDateLbl;
+@property (strong, nonatomic) NewsItem *newsItem;
 
 @end
 
@@ -23,6 +24,13 @@
 
 - (void)updateWithNewsItem:(NewsItem*)item
 {
+    if ([self.newsItem isEqual:item])
+    {
+        return;
+    }
+    
+    self.newsItem = item;
+    
     [self.descriptionLbl setText:item.title];
     
     [self.pubDateLbl setText:[item.pubDate stringWithFormat:kDateFormat]];
@@ -33,17 +41,26 @@
         return;
     }
     
-    __weak typeof(self) wSelf = self;
-    [firstMedia imageWithCompletion:^(UIImage *image)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^
     {
-        dispatch_async(dispatch_get_main_queue(), ^
+        if (![self.newsItem isEqual:item])
         {
-            if (image)
-            {
-                [wSelf.image setImage:image];
-            }
-        });
-    }];
+            return;
+        }
+        
+        __weak typeof(self) wSelf = self;
+        [firstMedia imageWithCompletion:^(UIImage *image)
+         {
+             dispatch_async(dispatch_get_main_queue(), ^
+             {
+                 if (image)
+                 {
+                     [wSelf.image setImage:image];
+                 }
+             });
+         }];
+    });
+    
 }
 
 @end
