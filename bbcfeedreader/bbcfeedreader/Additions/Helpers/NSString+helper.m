@@ -19,7 +19,7 @@
     return [dateFormat dateFromString:self];
 }
 
--(NSString *)md5String
+- (NSString*)md5String
 {
     const char *concat_str = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];

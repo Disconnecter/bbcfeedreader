@@ -33,7 +33,8 @@
                                                                            0,
                                                                            CGRectGetMidX(sharedInstance.reachabilityView.bounds) - 2*30,
                                                                            CGRectGetHeight(sharedInstance.reachabilityView.bounds))];
-        [sharedInstance.infoLbl setMinimumScaleFactor:0.2];
+        [sharedInstance.infoLbl setMinimumScaleFactor:0.5];
+        [sharedInstance.infoLbl setFont:[UIFont systemFontOfSize:13.]];
         [sharedInstance.reachabilityView addSubview:sharedInstance.infoLbl];
     });
     
