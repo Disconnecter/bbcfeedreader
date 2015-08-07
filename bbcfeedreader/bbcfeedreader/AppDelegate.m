@@ -19,6 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+    NSURLCache* cache = [[NSURLCache alloc] initWithMemoryCapacity:10 * 1024 * 1024
+                                                      diskCapacity:100 * 1024 * 1024
+                                                          diskPath:nil];
+    [NSURLCache setSharedURLCache:cache];
+    
     [NewsManager getNewNewsCompletion:nil];
     
     return YES;

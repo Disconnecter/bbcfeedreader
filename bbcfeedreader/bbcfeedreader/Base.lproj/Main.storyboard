@@ -34,7 +34,7 @@
                                                         <constraint firstAttribute="width" constant="81" id="PQ8-cS-tX1"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsA-1a-zKB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bsA-1a-zKB">
                                                     <rect key="frame" x="97" y="8" width="462" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,7 +65,7 @@
                                                 <constraint firstItem="3Nb-q0-TKD" firstAttribute="trailing" secondItem="9Wb-bi-ZYX" secondAttribute="trailingMargin" id="VbB-zI-L4d"/>
                                                 <constraint firstItem="BR6-zh-bUx" firstAttribute="top" secondItem="9Wb-bi-ZYX" secondAttribute="topMargin" constant="-9" id="Vrl-SQ-que"/>
                                                 <constraint firstItem="ahN-dN-9tr" firstAttribute="top" secondItem="9Wb-bi-ZYX" secondAttribute="topMargin" constant="-8" id="aTT-ty-B0w"/>
-                                                <constraint firstItem="3Nb-q0-TKD" firstAttribute="top" secondItem="bsA-1a-zKB" secondAttribute="bottom" constant="8" id="bvA-Dg-k1Z"/>
+                                                <constraint firstItem="bsA-1a-zKB" firstAttribute="trailing" secondItem="9Wb-bi-ZYX" secondAttribute="trailingMargin" id="dxh-UC-Kmc"/>
                                                 <constraint firstItem="3Nb-q0-TKD" firstAttribute="top" secondItem="bsA-1a-zKB" secondAttribute="bottom" constant="8" id="flk-yg-zoH"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ahN-dN-9tr" secondAttribute="bottom" constant="-8.5" id="iQQ-7P-1KW"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3Nb-q0-TKD" secondAttribute="bottom" constant="1.5" id="qK0-mT-ttz"/>
@@ -175,7 +175,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY0-RP-ocd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eY0-RP-ocd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
@@ -217,7 +217,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                 </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,17 +252,39 @@ Cg
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncM-Qg-yNz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9C1-mA-6dw" id="y9c-Z4-88m"/>
+                                </connections>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Sgf-Ky-af8">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NK-1O-YV1">
+                                <rect key="frame" x="300" y="281" width="0.0" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="HoC-Qo-i4q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TFp-Fd-WEU" firstAttribute="top" secondItem="ncM-Qg-yNz" secondAttribute="bottom" id="E2W-eh-fVV"/>
+                            <constraint firstItem="ncM-Qg-yNz" firstAttribute="top" secondItem="6NK-1O-YV1" secondAttribute="bottom" constant="-318" id="FmB-7D-cgw"/>
+                            <constraint firstItem="Sgf-Ky-af8" firstAttribute="centerY" secondItem="ncM-Qg-yNz" secondAttribute="centerY" constant="-0.5" id="SJm-jL-IYO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ncM-Qg-yNz" secondAttribute="trailing" constant="-16" id="Uv9-ym-SeD"/>
+                            <constraint firstItem="6NK-1O-YV1" firstAttribute="centerX" secondItem="ncM-Qg-yNz" secondAttribute="centerX" id="Z8F-U1-EBV"/>
+                            <constraint firstItem="Sgf-Ky-af8" firstAttribute="centerX" secondItem="ncM-Qg-yNz" secondAttribute="centerX" constant="0.5" id="fGH-kg-fGo"/>
                             <constraint firstItem="ncM-Qg-yNz" firstAttribute="top" secondItem="rF8-Ly-bmW" secondAttribute="bottom" constant="-64" id="pxJ-hC-zcG"/>
                             <constraint firstItem="ncM-Qg-yNz" firstAttribute="leading" secondItem="dfH-IQ-E6V" secondAttribute="leadingMargin" constant="-16" id="sHl-rg-djN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Sgf-Ky-af8" id="BDv-nH-aah"/>
+                        <outlet property="errorLabel" destination="6NK-1O-YV1" id="NlU-Dv-vXS"/>
                         <outlet property="webView" destination="ncM-Qg-yNz" id="9PS-kS-Ql2"/>
                     </connections>
                 </viewController>

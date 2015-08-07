@@ -26,14 +26,16 @@
     __weak typeof(self) wSelf = self;
     [self.media imageWithCompletion:^(UIImage *image)
     {
-        wSelf.image = [[UIImageView alloc] initWithImage:image];
-        CGRect frame = wSelf.image.bounds;
-        
-        frame.origin.y = CGRectGetMidY(wSelf.view.bounds) - CGRectGetMidY(frame);
-        frame.origin.x = CGRectGetMidX(wSelf.view.bounds) - CGRectGetMidX(frame);
-        [wSelf.image setFrame:frame];
-        [wSelf.activityIndicator stopAnimating];
-        [wSelf.scrollView addSubview:wSelf.image];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            wSelf.image = [[UIImageView alloc] initWithImage:image];
+            CGRect frame = wSelf.image.bounds;
+            
+            frame.origin.y = CGRectGetMidY(wSelf.view.bounds) - CGRectGetMidY(frame);
+            frame.origin.x = CGRectGetMidX(wSelf.view.bounds) - CGRectGetMidX(frame);
+            [wSelf.image setFrame:frame];
+            [wSelf.activityIndicator stopAnimating];
+            [wSelf.scrollView addSubview:wSelf.image];
+        });
     }];
 }
 

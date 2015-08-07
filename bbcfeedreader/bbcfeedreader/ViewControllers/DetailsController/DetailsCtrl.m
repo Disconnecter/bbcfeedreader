@@ -11,6 +11,7 @@
 #import "WebCtrl.h"
 #import "NSDate+helper.h"
 #import "Media.h"
+#import "UIButton+helper.h"
 
 @interface DetailsCtrl ()
 
@@ -25,16 +26,7 @@
     [super viewDidLoad];
     [self setTitle:LOCALIZE(@"title",kLocalizedTableDetailsCtrl)];
 
-    UIButton *openInWeb = [UIButton buttonWithType:UIButtonTypeCustom];
-    openInWeb.frame = CGRectMake(0.0, 0.0, 50.0, 23.0);
-    [openInWeb setTitle:LOCALIZE(@"rightBtnTitle", kLocalizedTableDetailsCtrl) forState:UIControlStateNormal];
-    CGSize size = [openInWeb sizeThatFits:openInWeb.frame.size];
-    if (size.width >= CGRectGetWidth(openInWeb.frame))
-    {
-        openInWeb.frame = CGRectMake(0.0, 0.0, size.width + 4, 23.0);
-    }
-
-    [openInWeb setTitleColor:[UIColor colorWithRed:0 green:122/255. blue:1 alpha:1] forState:UIControlStateNormal];
+    UIButton *openInWeb = [UIButton barButtonWithTitle:LOCALIZE(@"rightBtnTitle", kLocalizedTableDetailsCtrl)];
     [openInWeb addTarget:self action:@selector(openWeb) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:openInWeb]];
     
@@ -69,13 +61,16 @@
         Media* media = self.newsItem.medias.allObjects.lastObject;
         [media imageWithCompletion:^(UIImage *image)
          {
-             NSTextAttachment *img = [NSTextAttachment new];
-             img.image = image;
-             NSAttributedString *attach = [NSAttributedString attributedStringWithAttachment:img];
-             NSMutableAttributedString* attributedString = [NSMutableAttributedString new];
-             [attributedString setAttributedString:[wSelf.fullText attributedText]];
-             [attributedString appendAttributedString:attach];
-             [wSelf.fullText setAttributedText:attributedString];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 NSTextAttachment *img = [NSTextAttachment new];
+                 img.image = image;
+                 NSAttributedString *attach = [NSAttributedString attributedStringWithAttachment:img];
+                 NSMutableAttributedString* attributedString = [NSMutableAttributedString new];
+                 [attributedString setAttributedString:[wSelf.fullText attributedText]];
+                 [attributedString appendAttributedString:attach];
+                 [wSelf.fullText setAttributedText:attributedString];
+                 
+             });
          }];
     }
 }
