@@ -20,4 +20,6 @@
 
 +(instancetype)newMediaWithDict:(NSDictionary*)dict forNewsItem:(NewsItem*)news inContext:(NSManagedObjectContext*)context;
 
+- (void)imageWithCompletion:(void (^)(UIImage* image))completion;
+
 @end

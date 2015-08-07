@@ -8,6 +8,9 @@
 
 #import "Media.h"
 #import "NewsItem.h"
+#import "NetworkCommunicationManager.h"
+#import "CoreDataStack.h"
+#import "NSString+helper.h"
 
 @implementation Media
 
@@ -27,5 +30,42 @@
     
     return media;
 }
+
+- (void)imageWithCompletion:(void (^)(UIImage* image))completion
+{
+    @synchronized(self)
+    {
+        NSString* imagePath = [CoreDataStack shared].dataFolder;
+        imagePath = [imagePath stringByAppendingString:[self.url md5String]];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:imagePath])
+        {
+            if (completion)
+            {
+                completion([UIImage imageWithContentsOfFile:imagePath]);
+            }
+            return;
+        }
+
+        [[NetworkCommunicationManager sharedInstance] qd_getDataFromURL:self.url withCompletion:^(NSData *data, NSError *error)
+         {
+             if (error)
+             {
+                 if (completion)
+                 {
+                     completion (nil);
+                 }
+                 return;
+             }
+
+             [data writeToFile:imagePath atomically:YES];
+
+             if (completion)
+             {
+                 completion([UIImage imageWithData:data]);
+             }
+         }];
+    }
+}
+
 
 @end

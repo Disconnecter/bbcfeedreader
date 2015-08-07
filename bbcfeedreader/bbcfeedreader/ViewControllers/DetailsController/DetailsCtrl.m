@@ -67,7 +67,7 @@
     {
         __weak typeof(self) wSelf = self;
         Media* media = self.newsItem.medias.allObjects.lastObject;
-        [self.newsItem imageForUrl:media.url completion:^(UIImage *image)
+        [media imageWithCompletion:^(UIImage *image)
          {
              NSTextAttachment *img = [NSTextAttachment new];
              img.image = image;

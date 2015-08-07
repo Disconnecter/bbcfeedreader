@@ -22,7 +22,7 @@
 
 + (instancetype)newsItemWith:(NSDictionary *)dict inContext:(NSManagedObjectContext*)context;
 + (instancetype)newsItemForDate:(NSDate *)date inContext:(NSManagedObjectContext*)context;
-- (void)imageForUrl:(NSString*)url completion:(void (^)(UIImage* image))completion;
+
 
 @end
 

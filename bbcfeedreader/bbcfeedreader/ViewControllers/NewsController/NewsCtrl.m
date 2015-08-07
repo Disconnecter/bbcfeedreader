@@ -13,6 +13,7 @@
 #import "NewsCell.h"
 #import "DetailsCtrl.h"
 #import "NewsManager.h"
+#import "ImageShowCtrl.h"
 
 @interface NewsCtrl () <UITableViewDataSource, UITableViewDelegate>
 
@@ -87,8 +88,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    DetailsCtrl* ctr = (DetailsCtrl*)segue.destinationViewController;
-    ctr.newsItem = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForCell:sender]];
+    if ([segue.identifier isEqualToString:kSegueNameShowImage])
+    {
+        UITableViewCell* cell = (UITableViewCell*)[sender superview].superview;
+        NewsItem* newsItem = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForCell:cell]];
+        ImageShowCtrl* imageCtrl = (ImageShowCtrl*)[segue destinationViewController];
+        imageCtrl.media = newsItem.medias.allObjects.lastObject;
+    }
+    else
+    {
+        DetailsCtrl* ctr = (DetailsCtrl*)segue.destinationViewController;
+        ctr.newsItem = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForCell:sender]];
+    }
 }
 
 - (void)refresh:(UIRefreshControl*)control

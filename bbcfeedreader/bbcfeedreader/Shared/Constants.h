@@ -14,3 +14,4 @@ extern NSString * const kLocalizedTableDetailsCtrl;
 extern NSString * const kLocalizedTableWebCtrl;
 
 extern NSString * const kSegueNameShowWeb;
+extern NSString * const kSegueNameShowImage;

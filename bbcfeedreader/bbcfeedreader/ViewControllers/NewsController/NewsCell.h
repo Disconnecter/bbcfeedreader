@@ -9,19 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @class NewsItem;
-@protocol NewsCellDelegate;
 
 @interface NewsCell : UITableViewCell
 
-@property (nonatomic, weak) id<NewsCellDelegate>delegate;
-
 - (void)updateWithNewsItem:(NewsItem*)item;
-
-@end
-
-@protocol NewsCellDelegate <NSObject>
-
-- (void)didTapImageAtCell:(NewsCell*)cell;
 
 @end
 

@@ -34,7 +34,7 @@
     }
     
     __weak typeof(self) wSelf = self;
-    [item imageForUrl:firstMedia.url completion:^(UIImage *image)
+    [firstMedia imageWithCompletion:^(UIImage *image)
     {
         dispatch_async(dispatch_get_main_queue(), ^
         {
@@ -44,14 +44,6 @@
             }
         });
     }];
-}
-
-- (IBAction)didTapImage:(UIButton *)sender
-{
-    if ([self.delegate respondsToSelector:@selector(didTapImageAtCell:)])
-    {
-        [self.delegate didTapImageAtCell:self];
-    }
 }
 
 @end

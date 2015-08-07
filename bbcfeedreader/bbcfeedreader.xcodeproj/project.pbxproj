@@ -31,6 +31,7 @@
 		2A976C9D1B72015C006FAF8E /* NSManagedObjectContext+Save.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976C9C1B72015C006FAF8E /* NSManagedObjectContext+Save.m */; };
 		2A976CA21B721325006FAF8E /* NetworkCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976CA11B721325006FAF8E /* NetworkCommunicationManager.m */; };
 		2A976CA51B7216F1006FAF8E /* XMLConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A976CA41B7216F1006FAF8E /* XMLConverter.m */; };
+		2AC890031B7499400080859B /* ImageShowCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC890021B7499400080859B /* ImageShowCtrl.m */; };
 		2AD2B3171B72411C001B59B3 /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B3161B72411C001B59B3 /* NewsManager.m */; };
 		2AD2B31E1B72529F001B59B3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B31D1B72529F001B59B3 /* Constants.m */; };
 		2AD2B3221B725878001B59B3 /* NSString+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B3211B725878001B59B3 /* NSString+helper.m */; };
@@ -91,6 +92,8 @@
 		2A976CA11B721325006FAF8E /* NetworkCommunicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkCommunicationManager.m; sourceTree = "<group>"; };
 		2A976CA31B7216F1006FAF8E /* XMLConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLConverter.h; sourceTree = "<group>"; };
 		2A976CA41B7216F1006FAF8E /* XMLConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLConverter.m; sourceTree = "<group>"; };
+		2AC890011B7499400080859B /* ImageShowCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageShowCtrl.h; sourceTree = "<group>"; };
+		2AC890021B7499400080859B /* ImageShowCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageShowCtrl.m; sourceTree = "<group>"; };
 		2AD2B3151B72411C001B59B3 /* NewsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsManager.h; sourceTree = "<group>"; };
 		2AD2B3161B72411C001B59B3 /* NewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
 		2AD2B31C1B72529F001B59B3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -249,6 +252,7 @@
 		2A976C8A1B71EA45006FAF8E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2AC890001B7499150080859B /* ImageShow */,
 				2A6341C01B73740D0002A7DF /* NewsController */,
 				2A6341C11B7374320002A7DF /* DetailsController */,
 				2A6341C21B7374500002A7DF /* WebController */,
@@ -279,6 +283,15 @@
 				2AD2B3161B72411C001B59B3 /* NewsManager.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		2AC890001B7499150080859B /* ImageShow */ = {
+			isa = PBXGroup;
+			children = (
+				2AC890011B7499400080859B /* ImageShowCtrl.h */,
+				2AC890021B7499400080859B /* ImageShowCtrl.m */,
+			);
+			path = ImageShow;
 			sourceTree = "<group>";
 		};
 		2AD2B31B1B72526B001B59B3 /* Shared */ = {
@@ -422,6 +435,7 @@
 				2A6341BC1B736F480002A7DF /* SafeFRCDelegateImplementation.m in Sources */,
 				2A6341D11B7378C00002A7DF /* NSDate+helper.m in Sources */,
 				2A976C631B70E314006FAF8E /* main.m in Sources */,
+				2AC890031B7499400080859B /* ImageShowCtrl.m in Sources */,
 				2A976C8D1B71FB6C006FAF8E /* CoreDataStack.m in Sources */,
 				2A6341CB1B7374E10002A7DF /* DetailsCtrl.m in Sources */,
 			);

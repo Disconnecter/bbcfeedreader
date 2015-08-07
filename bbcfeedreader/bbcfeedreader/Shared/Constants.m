@@ -17,3 +17,4 @@ NSString * const kLocalizedTableDetailsCtrl = @"DetailsCtrl";
 NSString * const kLocalizedTableWebCtrl     = @"WebCtrl";
 
 NSString * const kSegueNameShowWeb          = @"ShowWeb";
+NSString * const kSegueNameShowImage        = @"ShowImage";

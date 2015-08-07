@@ -52,7 +52,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="didTapImage:" destination="tSM-08-mRh" eventType="touchUpInside" id="tkB-hL-ztp"/>
+                                                        <segue destination="fnt-Pf-jQl" kind="presentation" identifier="ShowImage" id="VIY-V9-LDH"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -105,6 +105,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJu-Cv-avL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="467"/>
+        </scene>
+        <!--Image Show Ctrl-->
+        <scene sceneID="vkH-5D-ooK">
+            <objects>
+                <viewController id="fnt-Pf-jQl" customClass="ImageShowCtrl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WSs-mC-LXj"/>
+                        <viewControllerLayoutGuide type="bottom" id="tDB-p0-Xqa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fEC-Sc-vR0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZaD-Ff-pFr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fnt-Pf-jQl" id="yc1-Em-H8l"/>
+                                </connections>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qoR-zv-Ith">
+                                <rect key="frame" x="281" y="281" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBN-d3-FF7">
+                                <rect key="frame" x="2" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="EQ9-kj-lCL"/>
+                                    <constraint firstAttribute="height" constant="40" id="q1A-kx-vxc"/>
+                                </constraints>
+                                <state key="normal" title="×">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="fnt-Pf-jQl" eventType="touchUpInside" id="IEr-Jz-1ua"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZaD-Ff-pFr" firstAttribute="top" secondItem="fEC-Sc-vR0" secondAttribute="topMargin" id="0aR-iT-kid"/>
+                            <constraint firstItem="gBN-d3-FF7" firstAttribute="top" secondItem="WSs-mC-LXj" secondAttribute="bottom" id="TJu-EN-WoN"/>
+                            <constraint firstItem="tDB-p0-Xqa" firstAttribute="top" secondItem="ZaD-Ff-pFr" secondAttribute="bottom" id="VBf-bd-QZT"/>
+                            <constraint firstItem="qoR-zv-Ith" firstAttribute="centerX" secondItem="ZaD-Ff-pFr" secondAttribute="centerX" id="ZiR-O0-g0d"/>
+                            <constraint firstItem="qoR-zv-Ith" firstAttribute="centerY" secondItem="ZaD-Ff-pFr" secondAttribute="centerY" id="f5l-qb-wZG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZaD-Ff-pFr" secondAttribute="trailing" constant="-16" id="l2b-zR-ceP"/>
+                            <constraint firstItem="gBN-d3-FF7" firstAttribute="leading" secondItem="fEC-Sc-vR0" secondAttribute="leadingMargin" constant="-14" id="tn6-G0-tpk"/>
+                            <constraint firstItem="ZaD-Ff-pFr" firstAttribute="leading" secondItem="fEC-Sc-vR0" secondAttribute="leadingMargin" constant="-16" id="zYP-im-y2z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="qoR-zv-Ith" id="xH7-Bb-ZDc"/>
+                        <outlet property="scrollView" destination="ZaD-Ff-pFr" id="YYq-SY-hLp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOI-g6-8hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1299" y="-245"/>
         </scene>
         <!--text2-->
         <scene sceneID="r9b-Ck-VWw">
