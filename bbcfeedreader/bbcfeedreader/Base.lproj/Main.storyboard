@@ -17,8 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="khf-ME-ZdC">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OpZ-OU-flG" id="FEH-Wl-c3s"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gYn-Lc-C6L">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="80" id="tSM-08-mRh" customClass="NewsCell">
@@ -91,14 +98,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gYn-Lc-C6L" firstAttribute="top" secondItem="Xbq-WW-MdO" secondAttribute="bottom" constant="-64" id="4AR-NK-ZML"/>
+                            <constraint firstItem="gYn-Lc-C6L" firstAttribute="top" secondItem="khf-ME-ZdC" secondAttribute="bottom" id="3U4-8N-4ix"/>
+                            <constraint firstItem="gYn-Lc-C6L" firstAttribute="top" secondItem="Xbq-WW-MdO" secondAttribute="bottom" constant="44" id="4AR-NK-ZML"/>
                             <constraint firstItem="gYn-Lc-C6L" firstAttribute="leading" secondItem="672-R9-7dX" secondAttribute="leadingMargin" constant="-16" id="B43-gs-ThJ"/>
                             <constraint firstItem="YZ5-gC-Eqn" firstAttribute="top" secondItem="gYn-Lc-C6L" secondAttribute="bottom" id="XHs-OG-1af"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="khf-ME-ZdC" secondAttribute="trailing" constant="-16" id="ZEk-IL-kPk"/>
+                            <constraint firstItem="khf-ME-ZdC" firstAttribute="leading" secondItem="672-R9-7dX" secondAttribute="leadingMargin" constant="-16" id="Zze-ut-FmX"/>
+                            <constraint firstItem="khf-ME-ZdC" firstAttribute="top" secondItem="Xbq-WW-MdO" secondAttribute="bottom" id="q3E-fn-NAs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gYn-Lc-C6L" secondAttribute="trailing" constant="-16" id="ytX-To-cXC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Text" id="moc-yl-5cf"/>
                     <connections>
+                        <outlet property="searchBar" destination="khf-ME-ZdC" id="aUg-p7-x75"/>
                         <outlet property="tableView" destination="gYn-Lc-C6L" id="QgS-TB-uLB"/>
                     </connections>
                 </viewController>

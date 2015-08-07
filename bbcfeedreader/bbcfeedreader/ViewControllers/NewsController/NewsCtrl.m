@@ -15,11 +15,14 @@
 #import "NewsManager.h"
 #import "ImageShowCtrl.h"
 
-@interface NewsCtrl () <UITableViewDataSource, UITableViewDelegate>
+@interface NewsCtrl () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) SafeFetchedResultsController         *fetchedResultsController;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (strong, nonatomic) SafeFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) id<SafeFetchedResultsControllerDelegate> frcDelegate;
+
 @end
 
 @implementation NewsCtrl
@@ -111,6 +114,30 @@
             [control endRefreshing];
         });
     }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.newsdescription contains[c] %@ OR SELF.title contains[c] %@", searchText, searchText];
+    [self.fetchedResultsController.fetchRequest setPredicate:predicate];
+    
+    if (searchText.length == 0)
+    {
+        [self.fetchedResultsController.fetchRequest setPredicate:nil];
+    }
+    
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error])
+    {
+        NSLog(@"Error fetching: %@, %@", error, [error userInfo]);
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self.view endEditing:YES];
 }
 
 @end
