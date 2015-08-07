@@ -10,4 +10,9 @@
 
 @interface ReachabilityManager : NSObject
 
++(instancetype)sharedInstance;
+
+- (void)start;
+- (void)stop;
+
 @end
