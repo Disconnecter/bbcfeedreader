@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Zabolotnyy S. All rights reserved.
 //
 
+extern NSString * const kDefaultUrl;
+
 extern NSString * const kLastBuildDateKey;
 extern NSString * const kDateFormat;
 

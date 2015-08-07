@@ -8,6 +8,7 @@
 
 #import "Constants.h"
 
+NSString * const kDefaultUrl                        = @"http://feeds.bbci.co.uk/news/rss.xml";
 
 NSString * const kLastBuildDateKey                  = @"LastBuildDateKey";
 NSString * const kDateFormat                        = @"EE, d LLLL yyyy HH:mm:ss Z";

@@ -17,8 +17,8 @@
 
 + (void)getNewNewsCompletion:(void (^)(void))completion
 {
-    NSString* url = @"http://feeds.bbci.co.uk/news/rss.xml";
-    
+    NSString* url = [[NSUserDefaults standardUserDefaults] objectForKey:@"default_url"];
+
     [[NetworkCommunicationManager sharedInstance] qd_getResponseFromUrl:url
                                                          withCompletion:^(NSDictionary *data, NSError *error)
      {
@@ -48,10 +48,14 @@
              return;
          }
          
-         if ([[date laterDate:lastSavedDate] isEqualToDate:date])
+         if ([[date laterDate:lastSavedDate] isEqualToDate:date] || lastSavedDate == nil)
          {
              [[NSUserDefaults standardUserDefaults] setObject:date forKey:kLastBuildDateKey];
              [NewsManager parseWithArray:data[@"rss"][@"channel"][@"item"] completion:completion];
+         }
+         else if (completion)
+         {
+             completion();
          }
      }];
 }
@@ -66,18 +70,23 @@
         {
             NSDate* newsDate = [dict[@"pubDate"][@"value"] dateWithFormater:kDateFormat];
             
+            if (!newsDate)
+            {
+                continue;
+            }
+            
             NewsItem* item = [NewsItem newsItemForDate:newsDate inContext:context];
             if (!item)
             {
                 item = [NewsItem newsItemWith:dict inContext:context];
             }
             
-            [context saveChanges];
-            
-            if (completion)
-            {
-                completion();
-            }
+            [context saveChanges];  
+        }
+        
+        if (completion)
+        {
+            completion();
         }
     }];
 }

@@ -39,6 +39,7 @@
 		2AD2B31E1B72529F001B59B3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B31D1B72529F001B59B3 /* Constants.m */; };
 		2AD2B3221B725878001B59B3 /* NSString+helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD2B3211B725878001B59B3 /* NSString+helper.m */; };
 		2AD5DD9E1B74C8D50049BC38 /* ReachabilityManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AD5DDA01B74C8D50049BC38 /* ReachabilityManager.strings */; };
+		2AD5DDA41B74CF810049BC38 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2AD5DDA31B74CF810049BC38 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		2AD5DD9F1B74C8D50049BC38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ReachabilityManager.strings; sourceTree = "<group>"; };
 		2AD5DDA11B74C8D90049BC38 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReachabilityManager.strings; sourceTree = "<group>"; };
 		2AD5DDA21B74C8DA0049BC38 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ReachabilityManager.strings; sourceTree = "<group>"; };
+		2AD5DDA31B74CF810049BC38 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		2A976C601B70E314006FAF8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2AD5DDA31B74CF810049BC38 /* Settings.bundle */,
 				2A6341D21B738A300002A7DF /* Localization */,
 				2A976C611B70E314006FAF8E /* Info.plist */,
 				2A976C621B70E314006FAF8E /* main.m */,
@@ -421,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD5DDA41B74CF810049BC38 /* Settings.bundle in Resources */,
 				2AC8900F1B74AD680080859B /* WebCtrl.strings in Resources */,
 				2A976C6F1B70E314006FAF8E /* Main.storyboard in Resources */,
 				2AC8900B1B74AD600080859B /* DetailsCtrl.strings in Resources */,
