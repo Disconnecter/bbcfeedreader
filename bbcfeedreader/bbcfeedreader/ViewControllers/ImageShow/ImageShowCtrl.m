@@ -39,10 +39,14 @@
     }];
 }
 
+#pragma mark - Actions
+
 - (IBAction)close:(UIButton *)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - UIScrollViewDelegate
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView *)aScrollView
 {

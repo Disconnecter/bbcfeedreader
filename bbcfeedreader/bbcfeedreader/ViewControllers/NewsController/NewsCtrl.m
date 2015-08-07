@@ -116,6 +116,8 @@
     }];
 }
 
+#pragma mark - UISearchBarDelegate
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.newsdescription contains[c] %@ OR SELF.title contains[c] %@", searchText, searchText];

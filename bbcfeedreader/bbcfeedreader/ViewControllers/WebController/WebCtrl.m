@@ -20,6 +20,8 @@
 
 @implementation WebCtrl
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,6 +33,8 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:reload];
     [self loadWebLink];
 }
+
+#pragma mark - UIWebViewDelegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
@@ -47,6 +51,8 @@
     self.errorLabel.hidden = NO;
     [self.errorLabel setText:error.description];
 }
+
+#pragma mark - Actions
 
 - (void)loadWebLink
 {

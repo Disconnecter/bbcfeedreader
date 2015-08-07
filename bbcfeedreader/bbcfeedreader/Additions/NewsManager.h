@@ -10,7 +10,6 @@
 
 @interface NewsManager : NSObject
 
-
 /**
  *  Get news updates
  *

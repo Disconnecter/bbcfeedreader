@@ -12,6 +12,7 @@ extern NSString * const kDateFormat;
 extern NSString * const kLocalizedTableNewsCtrl;
 extern NSString * const kLocalizedTableDetailsCtrl;
 extern NSString * const kLocalizedTableWebCtrl;
+extern NSString * const kLocalizedTableReachabilityManager;
 
 extern NSString * const kSegueNameShowWeb;
 extern NSString * const kSegueNameShowImage;

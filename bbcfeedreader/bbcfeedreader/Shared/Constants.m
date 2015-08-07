@@ -9,12 +9,13 @@
 #import "Constants.h"
 
 
-NSString * const kLastBuildDateKey          = @"LastBuildDateKey";
-NSString * const kDateFormat                = @"EE, d LLLL yyyy HH:mm:ss Z";
+NSString * const kLastBuildDateKey                  = @"LastBuildDateKey";
+NSString * const kDateFormat                        = @"EE, d LLLL yyyy HH:mm:ss Z";
 
-NSString * const kLocalizedTableNewsCtrl    = @"NewsCtrl";
-NSString * const kLocalizedTableDetailsCtrl = @"DetailsCtrl";
-NSString * const kLocalizedTableWebCtrl     = @"WebCtrl";
+NSString * const kLocalizedTableNewsCtrl            = @"NewsCtrl";
+NSString * const kLocalizedTableDetailsCtrl         = @"DetailsCtrl";
+NSString * const kLocalizedTableWebCtrl             = @"WebCtrl";
+NSString * const kLocalizedTableReachabilityManager = @"ReachabilityManager";
 
-NSString * const kSegueNameShowWeb          = @"ShowWeb";
-NSString * const kSegueNameShowImage        = @"ShowImage";
+NSString * const kSegueNameShowWeb                  = @"ShowWeb";
+NSString * const kSegueNameShowImage                = @"ShowImage";

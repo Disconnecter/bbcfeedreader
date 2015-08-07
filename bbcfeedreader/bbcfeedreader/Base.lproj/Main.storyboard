@@ -175,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="1299" y="-245"/>
         </scene>
-        <!--text2-->
+        <!--text-->
         <scene sceneID="r9b-Ck-VWw">
             <objects>
-                <viewController title="text2" id="D7t-qb-6S8" customClass="DetailsCtrl" sceneMemberID="viewController">
+                <viewController title="text" id="D7t-qb-6S8" customClass="DetailsCtrl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PCf-79-Bpt"/>
                         <viewControllerLayoutGuide type="bottom" id="sHr-HW-sLf"/>

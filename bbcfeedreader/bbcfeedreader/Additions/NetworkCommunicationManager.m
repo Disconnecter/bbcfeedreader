@@ -77,11 +77,7 @@
          if (!error && data)
          {
              NSError *err = nil;
-#if FROM_GOOGLE
-            dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&err];
-#else
              dictionary = [XMLConverter qd_dictionaryForXMLData:data error:&err];
-#endif
              if (err)
              {
                  dictionary = nil;

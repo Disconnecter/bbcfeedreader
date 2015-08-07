@@ -13,6 +13,8 @@
 
 @implementation NewsManager
 
+#pragma mark - Public
+
 + (void)getNewNewsCompletion:(void (^)(void))completion
 {
     NSString* url = @"http://feeds.bbci.co.uk/news/rss.xml";
@@ -53,6 +55,8 @@
          }
      }];
 }
+
+#pragma mark - Private
 
 + (void)parseWithArray:(NSArray*)arr completion:(void (^)(void))completion
 {

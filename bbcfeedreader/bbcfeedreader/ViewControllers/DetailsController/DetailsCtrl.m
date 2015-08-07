@@ -21,6 +21,8 @@
 
 @implementation DetailsCtrl
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,10 +41,14 @@
     webCtrl.url = self.newsItem.link;
 }
 
+#pragma mark - Actions
+
 - (void)openWeb
 {
     [self performSegueWithIdentifier:kSegueNameShowWeb sender:nil];
 }
+
+#pragma mark - Private
 
 - (void)prepareAtributedNews
 {
@@ -61,7 +67,8 @@
         Media* media = self.newsItem.medias.allObjects.lastObject;
         [media imageWithCompletion:^(UIImage *image)
          {
-             dispatch_async(dispatch_get_main_queue(), ^{
+             dispatch_async(dispatch_get_main_queue(), ^
+             {
                  NSTextAttachment *img = [NSTextAttachment new];
                  img.image = image;
                  NSAttributedString *attach = [NSAttributedString attributedStringWithAttachment:img];
@@ -69,11 +76,12 @@
                  [attributedString setAttributedString:[wSelf.fullText attributedText]];
                  [attributedString appendAttributedString:attach];
                  [wSelf.fullText setAttributedText:attributedString];
-                 
              });
          }];
     }
 }
+
+#pragma mark - Utils
 
 - (void)setField:(NSString*)field inString:(NSMutableString*)string withValue:(NSString*)value
 {
