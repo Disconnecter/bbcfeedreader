@@ -14,6 +14,7 @@
 - (NSDate*)dateWithFormater:(NSString*)format
 {
     NSDateFormatter *dateFormat = [NSDateFormatter new];
+    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
     [dateFormat setDateFormat:format];
     return [dateFormat dateFromString:self];
 }
