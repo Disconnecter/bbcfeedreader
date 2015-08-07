@@ -1,2 +1,2 @@
-# BBC new feedreader
+# BBC news feedreader
  simplest RSS Reader for iOS
