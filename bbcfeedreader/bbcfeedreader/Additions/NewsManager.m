@@ -18,6 +18,10 @@
 + (void)getNewNewsCompletion:(void (^)(void))completion
 {
     NSString* url = [[NSUserDefaults standardUserDefaults] objectForKey:@"default_url"];
+    if (!url.length)
+    {
+        url = kDefaultUrl;
+    }
 
     [[NetworkCommunicationManager sharedInstance] qd_getResponseFromUrl:url
                                                          withCompletion:^(NSDictionary *data, NSError *error)
