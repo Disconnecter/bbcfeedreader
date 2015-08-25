@@ -72,6 +72,12 @@
 
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(NewsCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NewsItem *newsItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [cell updateWithNewsItem:newsItem];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = (self.fetchedResultsController.sections)[section];
@@ -80,11 +86,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NewsItem *newsItem = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewsCell class])];
-    [cell updateWithNewsItem:newsItem];
-    
-    return cell;
+    return [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([NewsCell class])];
 }
 
 #pragma mark - UI utils
