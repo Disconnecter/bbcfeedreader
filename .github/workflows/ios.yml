@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+
+    ## Step Checkout Repository "development" branch only for now
+    - uses: actions/checkout@v3
+
+    ## Step Generate env file for fastlane with github secrets
+    - name: Generate env file
+      run: |
+         touch env.ci
+         echo "ENV_VAL=\"${{ secrets.ENV_VAL }}\""  >> env.ci
+     - uses: actions/checkout@v3
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
