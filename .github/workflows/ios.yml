@@ -2,7 +2,16 @@ name: CI
 
 on:
   workflow_dispatch:
-
+   inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
 jobs:
   build:
     runs-on: macOS-latest
@@ -17,8 +26,9 @@ jobs:
       run: |
          touch env.ci
          echo "ENV_VAL=\"${{ secrets.ENV_VAL }}\""  >> env.ci
-     - uses: actions/checkout@v3
-      - run: |
+
+   - uses: actions/checkout@v3
+     - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
