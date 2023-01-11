@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           echo "ENV_VAL=\"${{ secrets.ENV_VAL }}\"" > env.ci
-          echo "ENV_VAL_TEST=\"${{ secrets.ENV_VAL }}\"" > env.ci
+          echo "ENV_VAL_TEST=\"${{ secrets.ENV_VAL }}\"" >> env.ci
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
