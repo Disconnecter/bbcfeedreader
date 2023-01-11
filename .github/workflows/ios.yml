@@ -1,17 +1,7 @@
 name: CI
 
-on:
-  workflow_dispatch:
-   inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
+on: [push]
+
 jobs:
   build:
     runs-on: macOS-latest
@@ -27,7 +17,7 @@ jobs:
          touch env.ci
          echo "ENV_VAL=\"${{ secrets.ENV_VAL }}\""  >> env.ci
 
-    ## Push
+    ## Pushasdas
     - uses: actions/checkout@v3
       - run: |
           git config user.name github-actions
